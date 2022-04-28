@@ -7,6 +7,7 @@ job('PracticaDockerDSL') {
         }
     }
     triggers {
+        scm('H/7 * * * *')	    
     }
     wrappers {
         nodejs('nodejs')
