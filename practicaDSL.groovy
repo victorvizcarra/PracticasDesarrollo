@@ -1,4 +1,4 @@
-job('Practica Node.js Docker DSL') {
+job('PracticaDockerDSL') {
     description('Practica de publicación en Docker-hub')
     scm {
         git('https://github.com/victorvizcarra/practicasdesarrollo.git', 'main') { node ->
