@@ -1,20 +1,19 @@
 job('Practica Node.js Docker DSL') {
     description('Practica de publicación en Docker-hub')
     scm {
-        git('https://github.com/victorvizcarra/PracticasDesarrollo.git', 'main') { node ->
+        git('https://github.com/victorvizcarra/practicasdesarrollo.git', 'main') { node ->
             node / gitConfigName('victorvizcarra')
             node / gitConfigEmail('victorvizcarra@gmail.com')
         }
     }
     triggers {
-        scm('H/7 * * * *')
     }
     wrappers {
         nodejs('nodejs')
     }
     steps {
         dockerBuildAndPublish {
-            repositoryName('victorvizcarra/PracticasDesarrollo')
+            repositoryName('victorvizcarra/practicasdesarrollo')
             tag('${GIT_REVISION,length=7}')
             registryCredentials('docker-hub')
             forcePull(false)
